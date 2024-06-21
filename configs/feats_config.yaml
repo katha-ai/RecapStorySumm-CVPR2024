@@ -1,0 +1,34 @@
+# @package _global_
+
+defaults:
+    - base
+    - _self_
+
+series_name: "24"
+"24":
+    total_episodes:
+        S02: 24
+        S03: 24
+        S04: 24
+        S05: 24
+        S06: 24
+        S07: 24
+        S08: 24
+        S09: 12
+prison-break:
+    total_episodes:
+        S02: 22
+        S03: 13
+        S04: 22
+
+dia_matching_model_name: "sentence-transformers/all-mpnet-base-v2"
+default_img_path: "../../../../../../default.png"
+generate_html: False
+vid_html_template: "${root}/reports/html_folders/recap_matching_template_fV.html"
+dia_html_template: "${root}/reports/html_folders/recap_matching_dialogue_template.html"
+# The model with which we want to extract frame embeddings for ImageNet feature
+model_name: 'densenet'
+skip: 2
+# Create HTML page for Scene to see if scene boundary working
+scene_html_template: "${root}/reports/html_folders/scene_template.html"
+generate_scene_html: False

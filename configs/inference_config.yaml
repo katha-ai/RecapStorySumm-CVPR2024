@@ -1,0 +1,26 @@
+# @package _global_
+
+defaults:
+  - trainer_config
+  - _self_
+
+model_name: "TaleSumm-ICVT|S1"
+
+model_config_path: "${ckpt_path}/${model_name}/${model_name}_config.yaml"
+state_dict_path: "${ckpt_path}/${model_name}/${model_name}_vidAP.pt"
+
+mode: inference
+series: '24'
+split_type_file: "${split_dir}/intra-loocv/split1.yaml" # or null
+gpus: [0]
+eval_test: True
+sampling_type: uniform
+
+vid_label_type: 'SL'
+dia_label_type: 'SLV'
+
+wandb:
+    logging: False
+
+ES:
+    save_best_model: False

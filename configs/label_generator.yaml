@@ -1,0 +1,22 @@
+# @package _global_
+
+defaults:
+  - base
+  - _self_
+
+series: "24"
+'24':
+  seasons: ["S02", "S03", "S04", "S05", "S06", "S07", "S08", "S09"]
+  total_eps_lst: [24, 24, 24, 24, 24, 24, 24, 12]
+prison-break:
+  seasons: ["S02", "S03"]
+  total_eps_lst: [22, 13]
+
+half_base_len: 8 # 2 for dia and 8 for vid (But we'll be using Dia labels from Vid). Hence NO smoothing for dia.
+modality: "dia"
+
+generate_fandom_human_labels: True
+
+generate_labels: False
+generate_smooth_labels: False
+generate_labels_for_dia_from_vid: False

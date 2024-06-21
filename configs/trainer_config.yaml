@@ -1,0 +1,106 @@
+# @package _global_
+defaults:
+    - base
+    - pos_weights
+    - _self_
+
+series: '24' # 'prison-break', or can put 'all' if you want to run all series
+
+# cross-series.yaml, intra-loocv, inter-loocv, multiple-label-split.yaml,
+# fandom-split.yaml, final-split.yaml (this is for final ckpt to be tested in real world)
+split_type: intra-loocv
+# If multiple folds exists, then the below is effective
+split_id: [0,1,2,3,4]
+eval_test: False
+mode: training # training, inference
+
+model_config_path: "${ckpt_path}/${wandb.model_name}/${wandb.model_name}_config.yaml"
+state_dict_path: "${ckpt_path}/${wandb.model_name}/${wandb.model_name}_vidAP.pt"
+
+# System Requirements
+gpus: [0,1,2,3]
+num-workers: 10
+
+# To run specifics
+verbose: True
+seed: 0
+epochs: 65
+batch_size: 4
+lr: 0.0001
+lr_scheduler: 'onecycle' # 'cyclic' or 'onecycle'
+weight_decay: 0.001
+amsgrad: False # To use AMSGrad optimization
+init_weights: False
+sampling_type: random
+ours_model: True
+pb: pgl
+
+# Data to be used
+modality: both
+max_cap: 25 # Maximum number of frames per shot 
+concatenation: True
+feat_fusion_style: concat # concat, simple, stack
+which_features: ['imagenet','mvit','clip']
+vary_window_size: False
+window_size: 20
+scene_boundary_threshold: 0.7
+withGROUP: True # need to keep computeGROUPloss `True` as well if this is true
+normalize_group_labels: False
+vid_label_type: 'SL'
+dia_label_type: 'SLV'
+
+# Model's Attention Parameters
+attention_type: sparse # sparse, full
+computeGROUPloss: True
+differential_attention: False
+differential_attention_type: basic # basic, advanced
+bin_size: 1
+max_groups: 200
+
+# Model'S Architecture -------------------------
+enable_encoder: True
+encoder_type: trm # max, avg, trm
+enable_dia_encoder: True
+dia_encoder_type: avg # max, avg, trm
+enable_decoder: True
+dec_layers: 6
+enc_layers: 1
+dec_num_heads: 8
+enc_num_heads: 8
+d_model: 128
+ffn_ratio: 4
+drop_proj: 0.1
+drop_trm: 0.2
+drop_fc: 0.2
+activation_trm: gelu
+activation_mlp: gelu
+activation_clf: relu
+max_pos_enc_len: 4096
+hidden_sizes: d_model # if d_model instead of empty list -> 2*Lin(d_model, d_model)
+
+# -------------------------
+# finetuned-name: mpnet-base, roberta-large, pegasus-large
+# non-finetuned: all-mpnet-base-v2, fb-roberta-large, all-MiniLM-L6-v2
+which_dia_model: roberta-large
+
+#-------------------------- Others -------------------------
+pool_location: -1 # 0: beginning, -1: end
+condition_on_current: False
+first_feat_dim: 1664
+second_feat_dim: 768
+third_feat_dim: 512
+
+ES: # Early stopping 
+    early_stopping: True
+    patience: 20
+    save_best_model: True
+
+wandb:
+    logging: False
+    project: vidsum
+    entity: rodosingh
+    model_name: "TaleSumm-Final"
+    sweeps: False
+    sweep_id: ""
+    sweep_agent_run_count: 0
+

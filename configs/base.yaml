@@ -1,0 +1,9 @@
+# @package _global_
+# Path variables
+root: "<Give ABSOLUTE path to the root folder that contains configs folder>"
+data_path: "${root}/data"
+split_dir: "${root}/configs/data_configs/splits"
+# To save dialog (or vision. if downloaded, move it here) backbones
+storage: "${root}" # OR you can specify any other path, if you don't like it storing in root folder
+cache_dir: "${storage}/models/"
+ckpt_path: "${storage}/checkpoints/storysumm"
