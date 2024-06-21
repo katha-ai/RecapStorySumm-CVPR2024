@@ -1,0 +1,64 @@
+<html>
+<style>
+    table,
+    th 
+    {
+        border: 3px solid black;
+        table-layout: fixed;
+        width: auto;
+    }
+    table tr td:nth-of-type(2)
+    {
+        border-right: 3px solid rgb(80, 3, 131);
+        color: black;
+    }
+    table tr td:nth-of-type(3)
+    {
+        border-left: 3px solid rgb(80, 3, 131);
+        color: black;
+    }
+    table td 
+    {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        padding: 10px;
+    }
+    .center {
+  	text-align: center;
+  	border: 3px solid rgb(80, 3, 131);
+    }
+</style>
+<body>
+    <div class="center">
+        <p>NOTE: The dialog no. are given as per to the index of newSrtObj_*.pkl in list. Hence starts from 0.</p>
+    </div>
+    <table border="1px">
+        <thead>
+            <tr>
+                <th>Recap Dialogue No.</th>
+                <th>Recap Dialogue Text</th>
+                <th>Top 1 and so on ...</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for rec_txt, rec_no, rec_ep, rec_time, rec_shots, ep_txts, ep_info in data %}
+            <tr align="center"  style="font-weight: bold">
+                <td rowspan="2">{{ rec_no }}</td>
+                <td>{{ rec_txt }}</td>
+                {% for ep_txt in ep_txts %}
+                <td>{{ ep_txt }}</td>
+                {% endfor %}
+            </tr>
+            <tr align="center">
+                <td style="display: none;"></td>
+                <td>Episode: {{rec_ep}}<br>Dialogue-Time: {{rec_time}}<br>Corresponding Visual Shots: {{rec_shots}}</td>
+                {% for sim_score, dia_no, ep_name, time, shots in ep_info %}
+                <td>Episode: {{ep_name}}<br>Dialogue-No.: {{dia_no}}<br>Dialogue-Time: {{time}}<br>Corresponding Visual Shots: {{shots}}<br>Similarity-Score: {{sim_score}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>

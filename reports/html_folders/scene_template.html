@@ -1,0 +1,29 @@
+<html>
+<body>
+<table border="1px">
+    <thead>
+        <tr><th>#</th>
+            <th>Scene frames...</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for path_lst, shot_lst in data %}
+        <tr align="center">
+            <td>{{ loop.index }}</td>
+            {% for shot_grp in path_lst %}
+                {% for img_path in shot_grp %}
+                    <td><img width=150px src="{{ img_path }}"></td>
+                {% endfor %}
+            {% endfor %}
+        </tr>
+        <tr align="center">
+            <td>--</td>
+            {% for shot in shot_lst %}
+            <td colspan="3">Shot: {{shot}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

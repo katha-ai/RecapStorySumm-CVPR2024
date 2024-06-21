@@ -1,0 +1,61 @@
+<html>
+<body>
+<table border="1px">
+    <thead>
+        <tr><th>#</th>
+            <th>Recap Frame</th>
+            <th>Top 1</th>
+            <th>Top 2</th>
+            <th>Top 3</th>
+            <th>Top 4</th>
+            <th>Top 5</th>
+            <th>Top 6</th>
+            <th>Top 7</th>
+            <th>Top 8</th>
+            <th>Top 9</th>
+            <th>Top 10</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for recap, top1, shot1, score1, top2, shot2, score2, top3, shot3, score3, top4, shot4, score4, top5, shot5, score5, top6, shot6, score6, top7, shot7, score7, top8, shot8, score8, top9, shot9, score9, top10, shot10, score10 in data %}
+        <tr>
+            {% if (loop.index-1)%3 == 0 %}
+                <th rowspan=6>{{ (loop.index - 1)//3 + 1 }}</th>
+            {% endif %}
+            <td><img width=150px src="{{ recap }}"></td>
+            <td><img width=150px src="{{ top1 }}"></td>
+            <td><img width=150px src="{{ top2 }}"></td>
+            <td><img width=150px src="{{ top3 }}"></td>
+            <td><img width=150px src="{{ top4 }}"></td>
+            <td><img width=150px src="{{ top5 }}"></td>
+            <td><img width=150px src="{{ top6 }}"></td>
+            <td><img width=150px src="{{ top7 }}"></td>
+            <td><img width=150px src="{{ top8 }}"></td>
+            <td><img width=150px src="{{ top9 }}"></td>
+            <td><img width=150px src="{{ top10 }}"></td>
+        </tr>
+        <tr align="center">
+            <td>{% if loop.index%3 == 1 %}
+                    Start Frame
+                {% elif loop.index%3 == 2 %}
+                    Mid Frame
+                {% else %}
+                    End Frame
+                {% endif %}
+            </td>
+            <td>Shot-{{shot1}}; {{ score1 }}</td>
+            <td>Shot-{{shot2}}; {{ score2 }}</td>
+            <td>Shot-{{shot3}}; {{ score3 }}</td>
+            <td>Shot-{{shot4}}; {{ score4 }}</td>
+            <td>Shot-{{shot5}}; {{ score5 }}</td>
+            <td>Shot-{{shot6}}; {{ score6 }}</td>
+            <td>Shot-{{shot7}}; {{ score7 }}</td>
+            <td>Shot-{{shot8}}; {{ score8 }}</td>
+            <td>Shot-{{shot9}}; {{ score9 }}</td>
+            <td>Shot-{{shot10}}; {{ score10 }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
