@@ -31,10 +31,11 @@
     <a href="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDZqdnhyaXgydnltM3JxcmNzazZkanJtanpnYnlqdzZkNzBmc3JuYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o6ZtgDOEj7K8EYFEc/giphy.gif">
     <a href=""><img src="https://img.shields.io/badge/🚀%20demo-coming_soon!-blue"></a>
     <!-- ![Static Badge](https://img.shields.io/badge/demo-coming_soon!-blue) -->
-    <video width="800px" height="auto" controls>
-    <source src="assets/S08E23_recap.mp4" type="video/mp4">
-    </video>
-    </a>
+    
+
+https://github.com/katha-ai/RecapStorySumm-CVPR2024/assets/47246458/5e258b2c-b4cd-437f-ae8c-0a4023a10de0
+
+
 </div>
 
 ## 📑 Contents
