@@ -29,36 +29,36 @@
     <a href="https://arxiv.org/abs/2405.11487"><img src="https://img.shields.io/badge/arXiv-2304.05634-f9f107.svg"></a>
     <a href="https://www.youtube.com/watch?v=VlB9O1vOz5c"><img src="https://badges.aleen42.com/src/youtube.svg"></a>
     <a href="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExeDZqdnhyaXgydnltM3JxcmNzazZkanJtanpnYnlqdzZkNzBmc3JuYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o6ZtgDOEj7K8EYFEc/giphy.gif">
-    <a href=""><img src="https://img.shields.io/badge/demo-coming_soon!-blue"></a>
+    <a href=""><img src="https://img.shields.io/badge/🚀%20demo-coming_soon!-blue"></a>
     <!-- ![Static Badge](https://img.shields.io/badge/demo-coming_soon!-blue) -->
     <video width="800px" height="auto" controls>
-    <source src="https://katha-ai.github.io/projects/recap-story-summ/static/videos/S08E23_recap.mp4" type="video/mp4">
+    <source src="assets/S08E23_recap.mp4" type="video/mp4">
     </video>
     </a>
 </div>
 
 ## 📑 Contents
-1. [About](#🤖-about)
-2. [Setting up the repository](#⚙️-setting-up-the-repository)
-    1. [Create a virtual environment](#🐍-create-a-python-virtual-environment)
-    2. [Update the config template](#🛠️-configure-the-configsbaseyaml-file)
-3. [Feature Extraction](#🔍-feature-extraction)
-4. [Downloading and Setting up the data directories](#📥-download)
-    1. [PlotSnap features](#🗃️-plotsnap-features)
-    2. [TaleSumm pre-trained weights](#🦾-talesumm-pre-trained-weights)
+1. [About](#robotabout)
+2. [Setting up the repository](#gearsetting-up-the-repository)
+    1. [Create a virtual environment](#snakecreate-a-python-virtual-environment)
+    2. [Update the config template](#hammer_and_wrenchconfigure-the-configsbaseyaml-file)
+3. [Feature Extraction](#magfeature-extraction)
+4. [Downloading and Setting up the data directories](#inbox_traydownload)
+    1. [PlotSnap features](#card_file_boxplotsnap-features)
+    2. [TaleSumm pre-trained weights](#mechanical_armtalesumm-pre-trained-weights)
     <!-- 2. [Pre-trained feature backbones](#👐-pre-trained-feature-backbones) -->
-5. [Train TaleSumm with different configurations](#🏋️-train)
+5. [Train TaleSumm with different configurations](#weight_lifting_mantrain)
 6. [Inference on TaleSumm to create summaries](#inference)
-7. [License](#📜-license)
-8. [Bibtex](#📍-cite)
+7. [License](#scrolllicense)
+8. [Bibtex](#round_pushpincite)
 
-## 🤖 About
+## :robot:About
 This is the official code repository for [**CVPR-2024**](https://cvpr.thecvf.com/Conferences/2024) accepted paper [**"Previously on ..." From Recaps to Story Summarization**](https://arxiv.org/abs/2405.11487). This repository contains the implementation of ***TaleSumm***, a Transformer-based hierarchical model on our proposed dataset ***PlotSnap***. *TaleSumm* processes entire episodes by creating compact shot 🎞️ and dialog 🗣️ representations, and predicts importance scores for each video shot and dialog utterance by enabling interactions between *local story groups*. Our model leverages multiple modalities, including visual and dialog features, to capture a comprehensive understanding of important shots in complex movie environments. Additionally, we provide the pre-trained weights for the *TaleSumm* as well as all the pre-trained feature backbones used in feature extraction. On top of that, we provide pre-extracted features for episodes (per-frame embeddings using `DenseNet169`, `CLIP`, and `MViT`), and dialog features (with finetuned `RoBERTa` backbone).
 <br>
 
-## ⚙️ Setting up the repository
+## :gear:Setting up the repository
 
-### 🐍 Create a `Python`-virtual environment
+### :snake:Create a `Python`-virtual environment
 1. Clone the repository and change the working directory to be project's root.
     ```bash
     $ git clone https://github.com/katha-ai/RecapStorySumm-CVPR2024
@@ -82,7 +82,7 @@ This is the official code repository for [**CVPR-2024**](https://cvpr.thecvf.com
     (storysumm) $ pip install -r requirements.txt
     ```
 
-### 🛠️ Configure the [`configs/base.yaml`](./configs/base.yaml) file
+### :hammer_and_wrench:Configure the [`configs/base.yaml`](./configs/base.yaml) file
 
 1. Add the absolute paths to the project directory in `configs/base.yaml`
 
@@ -103,12 +103,12 @@ Refer to `configs/trainer_config.yaml` and `configs/inference_config.yaml` for t
 
 
 
-## 🔍 Feature Extraction
+## :mag:Feature Extraction
 Follow the instructions in [feature_extractors/README.md](feature_extractors/README.md) **[WIP]** to extract required features from any given video and prepare it summarization. 
 > **Note** that we have already provided the pre-extracted features for *PlotSnap* below.
 
-## 📥 Download
-### 🗃️ PlotSnap features
+## :inbox_tray:Download
+### :card_file_box:PlotSnap features
 You can also use `wget` to download these files-
 
 ```bash
@@ -123,7 +123,7 @@ wget -O data $LINK
 | Prison Break | <ul><li>Contains total of 2 seasons (`S02` & `S03`).</li><li>They consists of 22 and 13 episodes, respectively.</li><li>The episodes follow the same directory stucture as TV Show `24`.</li></ul> | This occupy 22GB of disk space. |
 
 
-### 🦾 TaleSumm pre-trained weights
+### :mechanical_arm:TaleSumm pre-trained weights
 ```bash
 
 # Create the checkpoints folder `checkpoints/storysumm` in the project's root folder if not present already and put all checkpoints one-by-one in them.
@@ -162,7 +162,7 @@ wget -O checkpoints $LINK
 <br>
 
 
-## 🏋️ Train
+## :weight_lifting_man:Train
 After completing the above, now you can train *Talesumm* on a ***12GB*** Nvidia-2080 RTX-Ti GPU! You can also use the pre-trained weights provided in the [Download](#🦾-talesumm-pre-trained-weights) section.<br>
 
 > <b>Note</b>: It is recommended to use [wandb](https://wandb.ai) to log & track your experiments
@@ -236,11 +236,11 @@ To summarise a new video using Talesumm, please follow the following commands
 > **NOTE** : We have used 4 GPUs while training that is why the `gpus` parameter in the configuration is set to [0,1,2,3]. If you plan to more or less GPUs, please enter their GPU id's accordingly
 
 
-## 📜 License
+## :scroll:License
 This code is available for **non-commercial scientific research purposes** as defined in the [LICENSE file](LICENSE). By downloading and using this code you agree to the terms in the [LICENSE](LICENSE). Third-party datasets and software are subject to their respective licenses.
 
 
-## 📍 Cite
+## :round_pushpin:Cite
 If you find any part of this repository useful, please cite the following paper!
 ```
 @inproceedings{singh2024previously,
@@ -250,4 +250,3 @@ booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVP
 year={2024},
 }
 ```
-
