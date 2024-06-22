@@ -114,7 +114,7 @@ You can also use `wget` to download these files-
 
 ```bash
 # Download the features (as mentioned below into data/ folder)
-LINK="https://iiitaphyd-my.sharepoint.com/:f:/g/personal/makarand_tapaswi_iiit_ac_in/EiUo5uxNTklKp0ogbgIewfgBtk4liZul4fDah-9LQLKQDA?e=1mHebV"
+LINK="https://iiitaphyd-my.sharepoint.com/:u:/g/personal/makarand_tapaswi_iiit_ac_in/EdEsWTvAEg5Iuo1cAUNmVq4Bipauv5nGdTdXAtMidWR5GA?e=dLWkNo"
 wget -O data $LINK
 ```
 
@@ -133,7 +133,7 @@ mkdir -p <absolute_path_to_root>/checkpoints/storysumm
 # OR (simply do the following).
 
 # Now download the pre-trained weights (as mentioned below into ckpts/ folder)
-LINK="https://iiitaphyd-my.sharepoint.com/:u:/g/personal/makarand_tapaswi_iiit_ac_in/ES91ZF90ArJGiXkEa53-kJABNytKOyOSQlr03dnTf6bKKg?e=shbnsj"
+LINK="https://iiitaphyd-my.sharepoint.com/:u:/g/personal/makarand_tapaswi_iiit_ac_in/ES91ZF90ArJGiXkEa53-kJABNytKOyOSQlr03dnTf6bKKg?e=PN1Gir"
 wget -O checkpoints $LINK
 ```
 <!--
