@@ -1,4 +1,4 @@
-from models.encoder import simple_encoder, mlp_enc
+from models.talesumm.encoder import mlp_enc
 from typing import Optional
 
 import torch
