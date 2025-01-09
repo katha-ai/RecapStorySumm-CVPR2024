@@ -114,9 +114,10 @@ You can also use `wget` to download these files-
 
 ```bash
 # Download the features (as mentioned below into data/ folder)
-LINK="https://iiitaphyd-my.sharepoint.com/:u:/g/personal/makarand_tapaswi_iiit_ac_in/EdEsWTvAEg5Iuo1cAUNmVq4Bipauv5nGdTdXAtMidWR5GA?e=dLWkNo"
+LINK="https://iiitaphyd-my.sharepoint.com/:u:/g/personal/makarand_tapaswi_iiit_ac_in/EdEsWTvAEg5Iuo1cAUNmVq4Bipauv5nGdTdXAtMidWR5GA?download=1"
 wget -O data $LINK
 ```
+*Alternatively. data can be downloaded from [https://datafoundation.iiit.ac.in/datasets](https://datafoundation.iiit.ac.in/datasets) in form of tar.gz file (1733900011332_data.tar.gz).*
 
 |File name | Contents | Comments |
 |----------|---------------|----------|
@@ -133,9 +134,11 @@ mkdir -p <absolute_path_to_root>/checkpoints/storysumm
 # OR (simply do the following).
 
 # Now download the pre-trained weights (as mentioned below into ckpts/ folder)
-LINK="https://iiitaphyd-my.sharepoint.com/:u:/g/personal/makarand_tapaswi_iiit_ac_in/ES91ZF90ArJGiXkEa53-kJABNytKOyOSQlr03dnTf6bKKg?e=PN1Gir"
+LINK="https://iiitaphyd-my.sharepoint.com/:u:/g/personal/makarand_tapaswi_iiit_ac_in/ES91ZF90ArJGiXkEa53-kJABNytKOyOSQlr03dnTf6bKKg?download=1"
 wget -O checkpoints $LINK
 ```
+
+*Alternatively. model weights can be downloaded from [https://datafoundation.iiit.ac.in/datasets](https://datafoundation.iiit.ac.in/datasets) in form of tar.gz file (1733900011332_checkpoints.tar.gz).*
 <!--
 1. IntraCVT ka split 0 th ckpt.
 2. Multiple labels split ka ckpt
