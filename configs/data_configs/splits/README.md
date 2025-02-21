@@ -17,3 +17,6 @@ Trains on the TV show "24" and evaluates on "Prison Break"
 
 Used to evaluate different annotators. Results in Table 9 of the paper.
 
+## final-split.yaml
+
+Used to produce final checkpoint of TaleSumm (to be used for general inference).
